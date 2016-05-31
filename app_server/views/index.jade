@@ -1,0 +1,28 @@
+﻿extends layout
+
+block content 
+  .row
+   .col-md-9.page
+     .row.topictype
+       a.label.label-info(href='/')  全部
+       a(href='/') 读书
+       a(href='/') 书评
+       a(href='/') 求书
+       a(href='/') 求索
+     each topic in topics
+       .row.topiclist
+         img(src='#{topic.img}')
+         span.count
+            i.coment=topic.commentCount
+            i /
+            i=topic.visitedCount
+
+         span.label.label-info=topic.type
+         a(href='/')=topic.title
+
+         span.pull-right=topic.postTime
+         a.pull-right.author(href='/')=topic.author
+  
+   .col-md-3
+     .userinfo
+       p stoneniqiu

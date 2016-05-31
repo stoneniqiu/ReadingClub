@@ -1,0 +1,35 @@
+﻿doctype html
+html
+  head
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title= title
+    link(rel='stylesheet', href='/bootstrap/css/bootstrap.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    nav.navbar.navbar-default.navbar-fixed-top.navbar-inverse
+     .container
+      .navbar-header
+        a.navbar-brand(href='/') ReadingClub
+      
+      .collapse.navbar-collapse
+       ul.nav.navbar-nav.pull-right
+         li
+          a(href='/') 首页
+         li
+          a(href='/Books') 读物
+         li
+          a(href='/About') 关于
+         li
+          a(href='/Register') 注册
+         li
+          a(href='/Login') 登录
+    #bodycontent.container
+      block content
+
+   footer.container
+       .row
+          .col-xs-12
+            small &copy; stoneniqiu 2016
+
+    script(src='/javascripts/jquery-1.11.1.min.js')
+    script(src='/bootstrap/js/bootstrap.min.js')

@@ -1,0 +1,28 @@
+﻿extends layout
+
+include _includes/rating
+ 
+block content 
+  .row
+   .col-md-9.page
+     each book in books
+       .row.booklist
+         .col-md-2
+          img(src='#{book.img}')
+         .col-md-10
+            p
+             a(href="/Detail/#{book.id}")=book.title
+            p=book.info
+            p
+             +outputRating(book.rating)
+            p.tags
+             each tag in book.tags
+              span=tag
+
+  
+   .col-md-3
+     .userinfo
+       p stoneniqiu
+       
+
+  

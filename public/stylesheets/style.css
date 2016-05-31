@@ -1,0 +1,53 @@
+﻿body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    background: gainsboro;
+}
+
+a {
+  color: #00b7ff;
+}
+.row{ margin-left: 0;margin-right: 0;}
+.navbar-default {
+  background-color: #444;
+  border-color: black;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    color: #ffffff;
+    background-color:#222;
+}
+.navbar-default .navbar-nav > li > a{
+    color:  #ccc;
+}
+a.navbar-brand{color: #fff !important}
+#bodycontent{ margin-top:80px;}
+
+.userinfo,.page{ border-radius: 3px;background: white;padding: 20px;padding-bottom: 10px;}
+
+/*books*/
+.booklist{ margin-bottom: 20px;border-bottom: 1px dotted darkcyan;padding-bottom: 20px;}
+.booklist .col-md-2{ padding: 0;}
+.booklist .col-md-2 img{ box-shadow: 0 0 5px;}
+.booklist .glyphicon-star,.bookdetail .glyphicon-star{color:gold}
+.booklist .glyphicon-star-empty,.bookdetail .glyphicon-star-empty{color:gray}
+.tags span{ margin: 0 3px;color: gray;cursor: pointer;}
+
+/*book detail*/
+.bookdetail h3{ text-indent: 10px;margin: 20px 0;border-bottom: 1px gainsboro solid;padding: 0 0 10px 0}
+.brief{ padding-left: 10px;line-height: 25px}
+/*index*/
+.topiclist{ margin: 20px 0;font-size: medium;}
+.topiclist span{ margin-right: 10px;}
+.topiclist span.count{ width: 50px;display: inline-block;color: gray;}
+.topiclist a{ color: #333;}
+.topiclist a:hover{ text-decoration: none;color: #00b7ff;}
+.topiclist .pull-right{ font-size: small;color: gray;}
+.topiclist .label{ font-size: small;}
+.topiclist .author{ color: gray;display: inline-block;margin-right: 10px;}
+.topictype a{ font-size: medium;margin-right: 10px;display: inline-block;}
+.topiclist img{ width: 30px;height: 30px;border-radius: 15px;margin-right: 10px;}
+
+@media (min-width: 1700px) {
+    .container{ width: 1400px}
+}
+footer{ margin-top: 50px;}
+
