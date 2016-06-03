@@ -1,4 +1,5 @@
 ﻿extends layout
+include _includes/rating
 
 block content 
   .row
@@ -20,7 +21,8 @@ block content
          span.label.label-info=topic.type
          a(href='/')=topic.title
 
-         span.pull-right=topic.postTime
+         span.pull-right
+           +formatDate(topic.createdOn)
          a.pull-right.author(href='/')=topic.author
   
    .col-md-3

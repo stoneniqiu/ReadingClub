@@ -1,6 +1,9 @@
 ﻿extends layout
 
 block content
+ if(error.status==500)
   h1= message
   h2= error.status
   pre #{error.stack}
+ if(error.status==404)
+  .alert.alert-danger= message

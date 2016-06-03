@@ -33,7 +33,10 @@
   <ItemGroup>
     <Compile Include="app.js" />
     <Compile Include="app_server\controllers\home.js" />
+    <Compile Include="app_server\models\books.js" />
+    <Compile Include="app_server\models\db.js" />
     <Compile Include="app_server\routes\index.js" />
+    <Compile Include="app_server\services\homeService.js" />
     <Compile Include="public\bootstrap\js\bootstrap.js" />
     <Compile Include="public\bootstrap\js\bootstrap.min.js" />
     <Compile Include="public\bootstrap\js\npm.js" />
@@ -45,6 +48,7 @@
     <Content Include="app_server\views\detail.jade" />
     <Content Include="app_server\views\error.jade" />
     <Content Include="app_server\views\index.jade" />
+    <Content Include="app_server\views\info.jade" />
     <Content Include="app_server\views\layout.jade" />
     <Content Include="app_server\views\_includes\rating.jade" />
     <Content Include="package.json" />
@@ -68,7 +72,9 @@
   <ItemGroup>
     <Folder Include="app_server\" />
     <Folder Include="app_server\controllers\" />
+    <Folder Include="app_server\models\" />
     <Folder Include="app_server\routes\" />
+    <Folder Include="app_server\services\" />
     <Folder Include="app_server\views\" />
     <Folder Include="app_server\views\_includes\" />
     <Folder Include="bin\" />

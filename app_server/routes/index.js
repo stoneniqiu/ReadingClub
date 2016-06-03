@@ -7,6 +7,7 @@ router.get('/about', homeController.about);
 router.get('/books', homeController.books);
 router.get('/detail/:id', homeController.detail);
 
+
 module.exports = router;
 
 
