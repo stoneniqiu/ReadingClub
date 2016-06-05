@@ -1,38 +1,67 @@
-﻿
+﻿var request = require('request');
+
 var bookservice = require('../services/homeService.js');
- 
+
+var apiOptions = {
+    server : "http://localhost:3000"
+};
+//if (process.env.NODE_ENV === 'production') {
+//    apiOptions.server = "https://stoneniqiu-mean.herokuapp.com/ ";
+//}
+
+
 module.exports.index = function (req, res) {
-    bookservice.allTopics(function (result) {
-        var obj = result.content;
-        console.log(obj.status);
-        if (result.status == 200) {
-            res.render('index', { title: 'Index', topics: obj });
+    var requestOptions, path;
+    path = "/api/topics";
+    requestOptions= {
+        url: apiOptions.server + path,
+        method: "GET",
+        json:{},
+    }
+    request(requestOptions, function (err, response, body) {
+        if (response.statusCode == 200) {
+            res.render('index', { title: 'Index', topics: body });
+        } else {
+            res.render('error', { message: err.message, error: err });
         }
-        res.render('info', obj);
-    });  
+    });
 };
 
 module.exports.books = function (req, res) {
-    bookservice.allBooks(function(result) {
-        var obj = result.content;
-        console.log(obj.status);
-        if (result.status == 200) {
-            res.render('books', { title: 'Books', books: obj });
+    var requestOptions, path;
+    path = "/api/books";
+    requestOptions = {
+        url: apiOptions.server + path,
+        method: "GET",
+        json: {},
+    }
+    request(requestOptions, function (err, response, body) {
+        if (response.statusCode == 200) {
+            res.render('books', { title: 'Books', books: body });
+        } else {
+            res.render('error', { message: err.message, error: err });
         }
-        res.render('info', obj);
-    });  
+    });
 };
 
 
 
 module.exports.detail = function (req, res) {
-    bookservice.bookReadOne(req.params.id, function (result) {
-        var obj = result.content;
-        if (result.status == 200) {
-            res.render('detail', { title: obj.title, book: obj });
-        } 
-        res.render('info', obj);
+    var requestOptions, path;
+    path = "/api/book/" + req.params.id;
+    requestOptions = {
+        url: apiOptions.server+path ,
+        method: "GET",
+        json: {},
+    }
+    request(requestOptions, function (err, response, body) {
+        if (response.statusCode == 200) {
+            res.render('detail', { title: body.title, book: body });
+        } else {
+            res.render('info', err);
+        }
     });
+   
    };
 
 module.exports.about = function (req, res) {

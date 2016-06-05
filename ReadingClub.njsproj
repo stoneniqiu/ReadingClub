@@ -32,6 +32,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="app.js" />
+    <Compile Include="app_api\controllers\book.js" />
+    <Compile Include="app_api\controllers\topic.js" />
+    <Compile Include="app_api\models\db.js" />
+    <Compile Include="app_api\models\books.js" />
+    <Compile Include="app_api\routes\index.js" />
     <Compile Include="app_server\controllers\home.js" />
     <Compile Include="app_server\models\books.js" />
     <Compile Include="app_server\models\db.js" />
@@ -70,6 +75,10 @@
     <Content Include="views\error.jade" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="app_api\" />
+    <Folder Include="app_api\controllers\" />
+    <Folder Include="app_api\models\" />
+    <Folder Include="app_api\routes\" />
     <Folder Include="app_server\" />
     <Folder Include="app_server\controllers\" />
     <Folder Include="app_server\models\" />
