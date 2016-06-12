@@ -13,7 +13,7 @@ var bookSchema = new mongoose.Schema({
     tags: [String],
     brief: { type: String, required: true },
     ISBN: String,
-    id:objectId
+    
 });
 
 var userSchema = new mongoose.Schema({
@@ -51,8 +51,8 @@ var topicSchema = new mongoose.Schema({
     content: String,
     comments: [commentSchema],
     deleted: { type: Boolean, default: false },
-    top: { type: Boolean, default: false }, // ÖÃ¶¥Ìû
-    good: { type: Boolean, default: false }, // ¾«»ªÌû
+    top: { type: Boolean, default: false }, // Ã–ÃƒÂ¶Â¥ÃŒÃ»
+    good: { type: Boolean, default: false }, // Â¾Â«Â»ÂªÃŒÃ»
 });
 
 
