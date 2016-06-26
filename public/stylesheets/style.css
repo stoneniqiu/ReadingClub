@@ -27,8 +27,8 @@ a.navbar-brand{color: #fff !important}
 .booklist{ margin-bottom: 20px;border-bottom: 1px dotted darkcyan;padding-bottom: 20px;}
 .booklist .col-md-2{ padding: 0;}
 .booklist .col-md-2 img{ box-shadow: 0 0 5px;}
-.booklist .glyphicon-star,.bookdetail .glyphicon-star{color:gold}
-.booklist .glyphicon-star-empty,.bookdetail .glyphicon-star-empty{color:gray}
+.booklist .glyphicon-star,.bookdetail .glyphicon-star,.topiclist .glyphicon-star{color:gold}
+.booklist .glyphicon-star-empty,.bookdetail .glyphicon-star-empty,.topiclist .glyphicon-star-empty{color:gray}
 .tags span{ margin: 0 3px;color: gray;cursor: pointer;}
 
 /*book detail*/
@@ -46,6 +46,7 @@ a.navbar-brand{color: #fff !important}
 .topictype a{ font-size: medium;margin-right: 10px;display: inline-block;}
 .topiclist img{ width: 30px;height: 30px;border-radius: 15px;margin-right: 10px;}
 
+ 
 @media (min-width: 1700px) {
     .container{ width: 1400px}
 }

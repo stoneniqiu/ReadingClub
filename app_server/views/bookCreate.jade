@@ -1,0 +1,44 @@
+﻿extends layout
+include _includes/rating
+
+block content
+  .row
+   .col-md-12.page.bookdetail
+      h3 新增推荐书籍  
+      .row
+        .col-xs-12.col-md-6
+         form.form-horizontal(action='',method="post",role="form")
+          - if (error == "val")
+           .alert.alert-danger(role="alert") All fields required, please try again
+          .form-group
+            label.control-label(for='title') 书名
+            input#name.form-control(name='title')
+          .form-group
+            label.control-label(for='info') 信息
+            input#name.form-control(name='info')            
+          .form-group
+            label.control-label(for='ISBN') ISBN
+            input#name.form-control(name='ISBN')
+          .form-group
+            label.control-label(for='brief') 简介
+            textarea#name.form-control(name='brief')
+          .form-group
+            label.control-label(for='tags') 标签
+            input#name.form-control(name='tags')
+          .form-group
+            label.control-label(for='rating') 推荐指数
+            select#rating.form-control.input-sm(name="rating")
+              option 5
+              option 4
+              option 3
+              option 2
+              option 1
+          .form-group
+            p 上传图片
+            a.btn.btn-info(id="upload", name="upload") 上传图片
+            br
+            img(id='img')
+            input#imgvalue(type='hidden',name='img',value='')
+          .form-group
+            button.btn.btn-primary(type='submit') 提交
+    

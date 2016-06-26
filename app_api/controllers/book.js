@@ -1,3 +1,4 @@
+require('../models/db.js');
 var mongoose = require('mongoose');
 var BookModel = mongoose.model('Book');
 
@@ -25,6 +26,7 @@ module.exports.bookCreate = function (req, res) {
         img: req.body.img,
         tags: req.body.tags,
         brief: req.body.brief,
+        rating: req.body.rating,
         ISBN: req.body.ISBN
     }, function(err, book) {
         if (err) {
@@ -59,7 +61,6 @@ module.exports.bookReadOne = function (req, res) {
         sendJSONresponse(res, 200, book);
 
     });
-
 }
 
 module.exports.bookUpdateOne = function (req, res) {
@@ -101,6 +102,7 @@ module.exports.bookUpdateOne = function (req, res) {
 
 module.exports.bookDeleteOne = function (req, res) {
     var bookid = req.params.bookid;
+    console.log("bookid", bookid);
     if (bookid) {
         BookModel.findByIdAndRemove(bookid)
             .exec(function (err) {
@@ -116,3 +118,4 @@ module.exports.bookDeleteOne = function (req, res) {
         sendJSONresponse(res, 404, { message: "No bookid" });
     }
 }
+

@@ -12,17 +12,17 @@ block content
          .col-md-10
             p
              a(href="/Detail/#{book._id}")=book.title
+             span.close(data-id='#{book._id}') &times;
             p=book.info
             p
              +outputRating(book.rating)
             p.tags
              each tag in book.tags
               span=tag
-
+            
+             
   
    .col-md-3
      .userinfo
        p stoneniqiu
-       
-
-  
+       a(href='/book/create').btn.btn-info 新增推荐
