@@ -13,7 +13,6 @@ var bookSchema = new mongoose.Schema({
     tags: [String],
     brief: { type: String, required: true },
     ISBN: String,
-    id:objectId
 });
 
 var userSchema = new mongoose.Schema({

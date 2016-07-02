@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+
+<html data-ng-app="myApp">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body data-ng-controller="myController">
+    <ul>
+        <li ng-repeat="item in items">{{item}}</li>
+    </ul>
+
+    <div>{{50.25|currency:'￥' }}</div>
+
+    <div>{{ "Let's shout" | uppercase }}</div>
+    <!-- Output: LET’S SHOUT -->
+    {{ '21 Aug 2014' | date:"YYYY MMM D" }}
+    <!-- Output: 21 Aug 2014 -->
+
+</body>
+
+<script src="an.js"></script>
+</html>

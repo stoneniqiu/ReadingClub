@@ -1,5 +1,5 @@
 ﻿var mongoose = require('mongoose');
-var db = require('../models/db.js');
+var db = require('../../app_api/models/db.js');
 var Bookmodel = mongoose.model('Book');
 var Topicmodel = mongoose.model('Topic');
 

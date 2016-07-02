@@ -1,8 +1,11 @@
 ﻿extends layout
 
 block content
- if(success)
-  .alert.alert-success= message
- else
-  .alert.alert-danger= message
+ h3=title
+
+ if(status==404||status==500)
+  .alert.alert-danger= content
+ else if(status==200||status==201)
+  .alert.alert-success= content
+
   
