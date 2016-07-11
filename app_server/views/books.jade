@@ -1,10 +1,10 @@
 ﻿extends layout
 
-include _includes/rating
+  //include _includes/rating
  
 block content 
   .row
-   .col-md-9.page
+   .col-md-9.page(ng-controller="homeController")
      each book in books
        .row.booklist
          .col-md-2
@@ -14,14 +14,11 @@ block content
              a(href="/Detail/#{book._id}")=book.title
              span.close(data-id='#{book._id}') &times;
             p=book.info
-            p
-             +outputRating(book.rating)
+            p(rating-stars, rating=book.rating)
+              //+outputRating(book.rating)
             p.tags
              each tag in book.tags
               span=tag
-            
-             
-  
    .col-md-3
      .userinfo
        p stoneniqiu

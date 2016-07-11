@@ -1,10 +1,19 @@
 ﻿doctype html
-html
+html(ng-app='readApp')
   head
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     title= title
     link(rel='stylesheet', href='/bootstrap/css/bootstrap.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src='/angular/angular.min.js')
+    script(src='/lib/angular-route.min.js')
+    script(src='/angular/readApp.min.js')
+    //script(src='/app.js')
+    //script(src='/home/home.controller.js')
+    //script(src='/common/services/ReadData.service.js')
+    //script(src='/common/filters/formatDate.filter.js')
+    //script(src='/common/directive/ratingStars/ratingStars.directive.js')
+    script(src='/javascripts/jquery-1.11.1.min.js')
   body
     nav.navbar.navbar-default.navbar-fixed-top.navbar-inverse
      .container
@@ -24,14 +33,13 @@ html
          li
           a(href='/Login') 登录
     #bodycontent.container
+     div(ng-view)
       block content
 
    footer.container
        .row
           .col-xs-12
             small &copy; stoneniqiu 2016
-
-script(src='/plupload-2.1.8/js/plupload.full.min.js')
-script(src='/javascripts/jquery-1.11.1.min.js')
-script(src='/javascripts/books.js')
-     
+  
+   script(src='/plupload-2.1.8/js/plupload.full.min.js')
+   script(src='/javascripts/books.js')

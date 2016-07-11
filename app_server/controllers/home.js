@@ -32,20 +32,21 @@ function info (res, status) {
 
 
 module.exports.index = function (req, res) {
-    var requestOptions, path;
-    path = "/api/topics";
-    requestOptions = {
-        url: apiOptions.server + path,
-        method: "GET",
-        json: {},
-    }
-    request(requestOptions, function (err, response, body) {
-        if (response.statusCode == 200) {
-            res.render('index', { title: 'Index', topics: body });
-        } else {
-            res.render('error', { message: err.message, error: err });
-        }
-    });
+    //var requestOptions, path;
+    //path = "/api/topics";
+    //requestOptions = {
+    //    url: apiOptions.server + path,
+    //    method: "GET",
+    //    json: {},
+    //}
+    //request(requestOptions, function (err, response, body) {
+    //    if (response.statusCode == 200) {
+    //        res.render('index', { title: 'Index', topics: body });
+    //    } else {
+    //        res.render('error', { message: err.message, error: err });
+    //    }
+    //});
+    res.render('index', { title: 'Index' });
 };
 
 module.exports.books = function (req, res) {
@@ -121,7 +122,6 @@ module.exports.detail = function (req, res) {
 module.exports.delete = function (req, res) {
     var requestOptions, path;
     path = "/api/book/" + req.params.id;
-    console.log(path);
     requestOptions = {
         url: apiOptions.server + path,
         method: "delete",
@@ -141,7 +141,7 @@ var formidable = require('formidable');
 module.exports.uploadImg = function (req, res) {
   var form = new formidable.IncomingForm();   //创建上传表单
       form.encoding = 'utf-8';        //设置编辑
-      form.uploadDir = 'public/upload/temp/';     //设置上传目录
+      form.uploadDir = './../public/upload/temp/';     //设置上传目录
       form.keepExtensions = true;     //保留后缀
       form.maxFieldsSize = 3 * 1024 * 1024;   //文件大小
 
@@ -176,6 +176,8 @@ module.exports.uploadImg = function (req, res) {
     });
  
 };
+
+
 
 
 module.exports.about = function (req, res) {

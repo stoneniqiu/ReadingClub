@@ -1,12 +1,12 @@
-require('../models/db.js');
 var mongoose = require('mongoose');
+require('../models/db.js');
 var BookModel = mongoose.model('Book');
 
 var sendJSONresponse = function (res, status, content) {
     res.status(status);
     res.json(content);
 };
- 
+
 
 module.exports.books = function (req, res) {
     BookModel.find().exec(function (err, books) {
@@ -17,27 +17,28 @@ module.exports.books = function (req, res) {
         }
         sendJSONresponse(res, 200, books);
     });
-}
+};
 
 module.exports.bookCreate = function (req, res) {
+    console.log("imgurl:", req.body.img);
     BookModel.create({
         title: req.body.title,
         info: req.body.info,
         img: req.body.img,
         tags: req.body.tags,
         brief: req.body.brief,
+        ISBN: req.body.ISBN,
         rating: req.body.rating,
-        ISBN: req.body.ISBN
-    }, function(err, book) {
+    }, function (err, book) {
         if (err) {
             console.log(err);
             sendJSONresponse(res, 400, err);
         } else {
-            console.log(book);
+            console.log("ÐÂÔöÊé¼®:", book);
             sendJSONresponse(res, 201, book);
         }
     });
-}
+};
 
 module.exports.bookReadOne = function (req, res) {
     var bookid = req.params.bookid;
@@ -61,7 +62,8 @@ module.exports.bookReadOne = function (req, res) {
         sendJSONresponse(res, 200, book);
 
     });
-}
+
+};
 
 module.exports.bookUpdateOne = function (req, res) {
     var bookid = req.params.bookid;
@@ -98,11 +100,10 @@ module.exports.bookUpdateOne = function (req, res) {
     });
 
 
-}
+};
 
 module.exports.bookDeleteOne = function (req, res) {
     var bookid = req.params.bookid;
-    console.log("bookid", bookid);
     if (bookid) {
         BookModel.findByIdAndRemove(bookid)
             .exec(function (err) {
@@ -118,4 +119,3 @@ module.exports.bookDeleteOne = function (req, res) {
         sendJSONresponse(res, 404, { message: "No bookid" });
     }
 }
-

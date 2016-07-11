@@ -1,0 +1,4 @@
+{
+  "verbose": true,
+  "ignore": ["public//angular/readApp.min.js"]
+}

@@ -7,13 +7,34 @@ var bodyParser = require('body-parser');
 
 var routes = require('./app_server/routes/index');
 var routesApi = require('./app_api/routes/index');
-require('./app_api/models/db.js');
 
 var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'app_server', 'views'));
 app.set('view engine', 'jade');
+
+var uglifyJs = require("uglifyjs");
+var fs = require('fs');
+
+var appClientFiles = [
+    'app_client/app.js',
+    'app_client/home/home.controller.js',
+    'app_client/common/services/ReadData.service.js',
+    'app_client/common/filters/formatDate.filter.js',
+    'app_client/common/directive/ratingStars/ratingStars.directive.js'
+];
+
+var uglified = uglifyJs.minify(appClientFiles, { compress : false });
+
+fs.writeFile('public/angular/readApp.min.js', uglified.code, function (err) {
+    if (err) {
+        console.log(err);
+    } else {
+        console.log('脚本生产并保存成功: readApp.min.js');
+    }
+});
+
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
@@ -22,11 +43,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(require('stylus').middleware(path.join(__dirname, 'public')));
+
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'app_client')));
 
 app.use('/', routes);
 app.use('/api', routesApi);
-
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
@@ -59,5 +81,6 @@ app.use(function (err, req, res, next) {
     });
 });
 
+ 
 
 module.exports = app;

@@ -3,27 +3,26 @@ include _includes/rating
 
 block content 
   .row
-   .col-md-9.page
+   .col-md-9.page(ng-controller="homeController")
      .row.topictype
        a.label.label-info(href='/')  全部
        a(href='/') 读书
        a(href='/') 书评
        a(href='/') 求书
        a(href='/') 求索
-     each topic in topics
-       .row.topiclist
-         img(src='#{topic.img}')
-         span.count
-            i.coment=topic.commentCount
+     .error {{ message }}
+     .row.topiclist(ng-repeat='topic in data')
+          img(ng-src='{{topic.img}}')
+          span.count
+            i.coment {{topic.commentCount}}
             i /
-            i=topic.visitedCount
+            i {{topic.visitedCount}}
+          span.label.label-info {{topic.type}}
+          a(href='/') {{topic.title}}
+          
+          span.pull-right {{topic.createdOn|formdate}}
+          a.pull-right.author(href='/') {{topic.author}}
 
-         span.label.label-info=topic.type
-         a(href='/')=topic.title
-
-         span.pull-right
-           +formatDate(topic.createdOn)
-         a.pull-right.author(href='/')=topic.author
   
    .col-md-3
      .userinfo

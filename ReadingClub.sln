@@ -1,11 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.40629.0
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "ReadingClub", "ReadingClub.njsproj", "{824B8FC9-1497-4896-9030-2B8F26ADD68B}"
-EndProject
-Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "Reading", "..\Reading\Reading.njsproj", "{9FA58CB7-6344-4613-8DB1-D6358E332B64}"
+# Visual Studio 2012
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "ReadingClub", "ReadingClub.njsproj", "{2AF550A4-38E0-4740-ABD9-6B1CBE8DE228}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +9,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{824B8FC9-1497-4896-9030-2B8F26ADD68B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{824B8FC9-1497-4896-9030-2B8F26ADD68B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{824B8FC9-1497-4896-9030-2B8F26ADD68B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{824B8FC9-1497-4896-9030-2B8F26ADD68B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9FA58CB7-6344-4613-8DB1-D6358E332B64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9FA58CB7-6344-4613-8DB1-D6358E332B64}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9FA58CB7-6344-4613-8DB1-D6358E332B64}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9FA58CB7-6344-4613-8DB1-D6358E332B64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AF550A4-38E0-4740-ABD9-6B1CBE8DE228}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AF550A4-38E0-4740-ABD9-6B1CBE8DE228}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AF550A4-38E0-4740-ABD9-6B1CBE8DE228}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AF550A4-38E0-4740-ABD9-6B1CBE8DE228}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

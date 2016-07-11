@@ -4,15 +4,14 @@
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
     <Name>ReadingClub</Name>
-    <RootNamespace>Reading</RootNamespace>
+    <RootNamespace>ReadingClub</RootNamespace>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>824b8fc9-1497-4896-9030-2b8f26add68b</ProjectGuid>
-    <ProjectHome>
-    </ProjectHome>
+    <ProjectGuid>2af550a4-38e0-4740-abd9-6b1cbe8de228</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
     <StartupFile>bin\www</StartupFile>
     <SearchPath>
     </SearchPath>
@@ -34,17 +33,24 @@
     <Compile Include="app.js" />
     <Compile Include="app_api\controllers\book.js" />
     <Compile Include="app_api\controllers\topic.js" />
-    <Compile Include="app_api\models\db.js" />
     <Compile Include="app_api\models\books.js" />
+    <Compile Include="app_api\models\db.js" />
     <Compile Include="app_api\routes\index.js" />
+    <Compile Include="app_client\app.js" />
+    <Compile Include="app_client\common\directive\ratingStars\ratingStars.directive.js" />
+    <Compile Include="app_client\common\filters\formatDate.filter.js" />
+    <Compile Include="app_client\common\services\ReadData.service.js" />
+    <Compile Include="app_client\home\home.controller.js" />
     <Compile Include="app_server\controllers\home.js" />
+    <Compile Include="app_server\controllers\other.js" />
     <Compile Include="app_server\routes\index.js" />
+    <Compile Include="bin\www" />
+    <Compile Include="app_client\lib\angular-route.min.js" />
     <Compile Include="public\angular\angular.min.js" />
     <Compile Include="public\angular\readApp.js" />
     <Compile Include="public\bootstrap\js\bootstrap.js" />
     <Compile Include="public\bootstrap\js\bootstrap.min.js" />
     <Compile Include="public\bootstrap\js\npm.js" />
-    <Compile Include="bin\www" />
     <Compile Include="public\html\an.js" />
     <Compile Include="public\javascripts\books.js" />
     <Compile Include="public\javascripts\jquery-1.11.1.min.js" />
@@ -104,16 +110,18 @@
     <Compile Include="public\plupload-2.1.8\js\plupload.dev.js" />
     <Compile Include="public\plupload-2.1.8\js\plupload.full.min.js" />
     <Compile Include="public\plupload-2.1.8\js\plupload.min.js" />
-    <Content Include="app_server\views\about.jade" />
+    <Content Include="app_client\common\directive\ratingStars\ratingStars.template.html" />
+    <Content Include="app_client\home\home.view.html" />
+    <Content Include="app_client\index.html" />
     <Content Include="app_server\views\bookCreate.jade" />
-    <Content Include="app_server\views\books.jade" />
     <Content Include="app_server\views\detail.jade" />
-    <Content Include="app_server\views\error.jade" />
-    <Content Include="app_server\views\index.jade" />
+    <Content Include="app_server\views\books.jade" />
+    <Content Include="app_server\views\about.jade" />
     <Content Include="app_server\views\info.jade" />
-    <Content Include="app_server\views\layout.jade" />
     <Content Include="app_server\views\_includes\rating.jade" />
+    <Content Include="nodemon.json" />
     <Content Include="package.json" />
+    <Content Include="app_client\lib\angular-route.min.js.map" />
     <Content Include="public\angular\rating-stars.html" />
     <Content Include="public\bootstrap\css\bootstrap-theme.css" />
     <Content Include="public\bootstrap\css\bootstrap-theme.css.map" />
@@ -142,29 +150,39 @@
     <Content Include="public\plupload-2.1.8\js\Moxie.swf" />
     <Content Include="public\plupload-2.1.8\js\Moxie.xap" />
     <Content Include="public\stylesheets\style.css" />
-    <Content Include="public\upload\temp\1466750087913.png" />
     <Content Include="README.md" />
+    <Content Include="app_server\views\index.jade" />
+    <Content Include="app_server\views\layout.jade" />
+    <Content Include="app_server\views\error.jade" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app_api\" />
     <Folder Include="app_api\controllers\" />
     <Folder Include="app_api\models\" />
     <Folder Include="app_api\routes\" />
-    <Folder Include="app_server\" />
+    <Folder Include="app_client\common\directive\ratingStars\" />
+    <Folder Include="app_client\common\filters\" />
+    <Folder Include="app_client\common\directive\" />
+    <Folder Include="app_client\common\services\" />
+    <Folder Include="app_client\lib\" />
+    <Folder Include="app_client\home\" />
+    <Folder Include="app_client\common\" />
     <Folder Include="app_server\controllers\" />
-    <Folder Include="app_server\routes\" />
     <Folder Include="app_server\views\" />
+    <Folder Include="app_server\routes\" />
     <Folder Include="app_server\views\_includes\" />
     <Folder Include="bin\" />
+    <Folder Include="app_server\" />
+    <Folder Include="app_client\" />
     <Folder Include="public\" />
-    <Folder Include="public\angular\" />
     <Folder Include="public\bootstrap\" />
     <Folder Include="public\bootstrap\css\" />
     <Folder Include="public\bootstrap\fonts\" />
     <Folder Include="public\bootstrap\js\" />
-    <Folder Include="public\html\" />
     <Folder Include="public\images\" />
     <Folder Include="public\javascripts\" />
+    <Folder Include="public\html\" />
+    <Folder Include="public\angular\" />
     <Folder Include="public\plupload-2.1.8\" />
     <Folder Include="public\plupload-2.1.8\js\" />
     <Folder Include="public\plupload-2.1.8\js\i18n\" />
@@ -174,8 +192,8 @@
     <Folder Include="public\plupload-2.1.8\js\jquery.ui.plupload\" />
     <Folder Include="public\plupload-2.1.8\js\jquery.ui.plupload\css\" />
     <Folder Include="public\plupload-2.1.8\js\jquery.ui.plupload\img\" />
-    <Folder Include="public\stylesheets\" />
     <Folder Include="public\upload\" />
+    <Folder Include="public\stylesheets\" />
     <Folder Include="public\upload\temp\" />
   </ItemGroup>
   <!-- Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them. -->

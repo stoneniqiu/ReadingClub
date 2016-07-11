@@ -1,5 +1,10 @@
 ﻿angular.module('myApp', []);
-angular.module('myApp').controller('myController', myController);
-function myController($scope) {
-    $scope.items = ["one", "two", "three"];
+
+//function myController($scope) {
+//    $scope.items = ["one", "two", "three"];
+//};
+var myController = function ($scope) {
+    $scope.myInput = "Angular!";
 };
+
+angular.module('myApp').controller('myController', myController);

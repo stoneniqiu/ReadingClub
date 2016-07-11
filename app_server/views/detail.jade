@@ -16,8 +16,10 @@ block content
              each tag in book.tags
               span=tag
             p ISBN:#{book.ISBN}
+     
      h3 内容简介
      p.brief=book.brief    
    .col-md-3
      .userinfo
        p stoneniqiu 
+       a(href='/book/create').btn.btn-info 新增推荐

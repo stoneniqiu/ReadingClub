@@ -1,13 +1,13 @@
 {
-  "name": "reading",
+  "name": "reading-club",
   "version": "0.0.0",
   "private": true,
   "scripts": {
     "start": "node ./bin/www"
   },
-  "description": "Reading",
+  "description": "ReadingClub",
   "author": {
-    "name": "stoneniqiu",
+    "name": "Administrator",
     "email": ""
   },
   "dependencies": {
@@ -19,8 +19,8 @@
     "jade": "~1.6.0",
     "mongoose": "^4.4.19",
     "morgan": "~1.3.0",
-    "request": "^2.72.0",
     "serve-favicon": "~2.1.3",
-    "stylus": "0.42.3"
+    "stylus": "0.42.3",
+    "uglifyjs": "^2.4.10"
   }
 }
