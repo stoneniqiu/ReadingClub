@@ -1,0 +1,2 @@
+cmd.exe 
+cd %apppath%

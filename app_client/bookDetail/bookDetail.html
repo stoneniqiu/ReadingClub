@@ -1,0 +1,30 @@
+﻿<navigation></navigation>
+<div id="bodycontent" class="container">
+    <div class="row">
+        <div class="col-md-9 page bookdetail">
+            <h3>{{vm.book.title}}</h3>
+            <div class="row">
+                <div class="col-md-2">
+                    <img ng-src='{{vm.book.img}}' />
+                </div>
+                <div class="col-md-10">
+                    <p>{{vm.book.info}}</p>
+                    <p rating-stars rating="vm.book.rating"></p>
+                    <p class="tags">
+                    <span ng-repeat="tag in vm.book.tags">{{tag}}</span>
+                    </p>
+                    <p>ISBN:{{vm.book.ISBN}}</p>
+                </div>
+            </div>
+            <h3>内容简介</h3>
+            <p class="brief">{{vm.book.brief}}</p>
+        </div>
+        <div class="col-md-3">
+            <div class="userinfo">
+                <p>{{vm.user.userName}}</p>
+                <!--<a ng-click="vm.popupForm()" class="btn btn-info">新增推荐</a>-->
+            </div>
+        </div>
+    </div>
+</div>
+<footer-nav></footer-nav>

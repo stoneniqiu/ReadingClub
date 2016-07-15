@@ -1,11 +1,30 @@
 ﻿<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html ng-app="readApp">
 <head>
     <meta charset="utf-8" />
-    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <title>ReadingClub</title>
+    <base href="/" />
 </head>
-<body>
+<body ng-view>
+    <script src="/angular/angular.min.js"></script>
+    <script src="/lib/angular-route.min.js"></script>
+    <script src="/lib/angular-sanitize.min.js"></script>
+    <script src="/lib/ui-bootstrap-custom-0.12.0.min.js"></script>
+    <script src="/lib/ui-bootstrap-custom-tpls-0.12.0.min.js"></script>
+    <script src="/angular/readApp.min.js"></script>
+    <!--script(src='/app.js')-->
+    <!--script(src='/home/home.controller.js')-->
+    <!--script(src='/common/services/ReadData.service.js')-->
+    <!--script(src='/common/filters/formatDate.filter.js')-->
+    <!--script(src='/common/directive/ratingStars/ratingStars.directive.js')-->
+    <script src="/javascripts/jquery-1.11.1.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/plupload-2.1.8/js/plupload.full.min.js"> </script>
+
+    <script src="/javascripts/books.js"></script>
 
 </body>
 </html>

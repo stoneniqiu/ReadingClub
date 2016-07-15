@@ -1,18 +1,19 @@
 ﻿
 
-$(".close").click(function() {
-    if (confirm("确定删除？")) {
-        var id = $(this).data("id");
-        var row = $(this).parents(".booklist");
-        $.ajax({
-            url: "/book/" + id,
-            method: "delete",
-        }).done(function(data) {
-            console.log(data);
-            row.fadeOut();
-        });
-    }
-});
+//$(".close").click(function() {
+//    if (confirm("确定删除？")) {
+//        var id = $(this).data("id");
+//        var row = $(this).parents(".booklist");
+//        $.ajax({
+//            url: "/book/" + id,
+//            method: "delete",
+//        }).done(function(data) {
+//            console.log(data);
+//            row.fadeOut();
+//        });
+//    }
+//});
+ 
 
 
 var uploader = new plupload.Uploader({
@@ -23,10 +24,10 @@ var uploader = new plupload.Uploader({
     silverlight_xap_url: '/plupload-2.1.8/js/Moxie.xap',
     filters: {
         max_file_size: "3mb",
-                mime_types: [
-                    { title: "Image files", extensions: "jpg,gif,png" },
-                    { title: "Zip files", extensions: "zip" }
-                ]
+        mime_types: [
+            { title: "Image files", extensions: "jpg,gif,png" },
+            { title: "Zip files", extensions: "zip" }
+        ]
     },
     init: {
         PostInit: function () {

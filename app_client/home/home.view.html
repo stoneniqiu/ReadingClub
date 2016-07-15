@@ -1,17 +1,20 @@
-﻿<div class="row"  >
-    <div class="col-md-9 page" >
-        <div class="row topictype"><a href="/" class="label label-info">全部</a><a href="/">读书</a><a href="/">书评</a><a href="/">求书</a><a href="/">求索</a></div>
-          <div class="error">{{ vm.message }}</div>
-          <div class="row topiclist" data-ng-repeat='topic in vm.data'>
-            <img data-ng-src='{{topic.img}}'><span class="count"><i class="coment">{{topic.commentCount}}</i><i>/</i><i>{{topic.visitedCount}}</i></span>
-               <small  rating-stars rating="topic.commentCount"></small>
-               <span class="label label-info">{{topic.type}}</span><a href="/">{{topic.title}}</a>
-            <span class="pull-right">{{topic.createdOn | formatDate}}</span><a href="/" class="pull-right author">{{topic.author}}</a>
+﻿<navigation></navigation>
+<div id="bodycontent" class="container">
+    <div class="row">
+        <div class="col-md-9 page">
+            <div class="row topictype"><a href="/" class="label label-info">全部</a><a href="/">读书</a><a href="/">书评</a><a href="/">求书</a><a href="/">求索</a></div>
+            <div class="error">{{ vm.message }}</div>
+            <div class="row topiclist" data-ng-repeat='topic in vm.data'>
+                <img data-ng-src='{{topic.img}}'><span class="count"><i class="coment">{{topic.commentCount}}</i><i>/</i><i>{{topic.visitedCount}}</i></span>
+                <span class="label label-info">{{topic.type}}</span><a href="/">{{topic.title}}</a>
+                <span class="pull-right">{{topic.createdOn | formatDate}}</span><a href="/" class="pull-right author">{{topic.author}}</a>
+            </div>
         </div>
-    </div>
-    <div class="col-md-3">
-        <div class="userinfo">
-            <p>{{vm.user.userName}}</p>
+        <div class="col-md-3">
+            <div class="userinfo">
+                <p>{{vm.user.userName}}</p>
+            </div>
         </div>
     </div>
 </div>
+<footer-nav></footer-nav>

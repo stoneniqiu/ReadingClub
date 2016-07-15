@@ -1,0 +1,68 @@
+﻿<div class="modal-content">
+    <form id="addReview" name="addReview" role="form" ng-submit="vm.onSubmit()" class="form-horizontal">
+        <div class="modal-header">
+            <button type="button" ng-click="vm.modal.cancel()" class="close"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+            <h4 id="myModalLabel" class="modal-title">{{ vm.viewData.title }}</h4>
+        </div>
+        <div class="modal-body">
+            <div role="alert" ng-show="vm.formError" class="alert alert-danger">{{vm.formError}}</div>
+            <div class="form-group">
+                <label for="name" class="col-xs-2 col-sm-2 control-label">书名</label>
+                <div class="col-xs-10 col-sm-10">
+                    <input id="name" name="name" required="required" ng-model="vm.formData.title" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="info" class="col-xs-2 col-sm-2 control-label">信息</label>
+                <div class="col-xs-10 col-sm-10">
+                    <input id="info" name="info" required="required" ng-model="vm.formData.info" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="ISBN" class="col-xs-2 col-sm-2 control-label">ISBN</label>
+                <div class="col-xs-10 col-sm-10">
+                    <input id="ISBN" name="ISBN" required="required" ng-model="vm.formData.ISBN" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="tags" class="col-xs-2 col-sm-2 control-label">标签</label>
+                <div class="col-xs-10 col-sm-10">
+                    <input id="tags" name="tags" required="required" ng-model="vm.formData.tags" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="rating" class="col-xs-10 col-sm-2 control-label">推荐指数</label>
+                <div class="col-xs-12 col-sm-2">
+                    <select id="rating" required="required" name="rating" ng-model="vm.formData.rating" class="form-control input-sm">
+                        <option>5</option>
+                        <option selected="selected">4</option>
+                        <option>3</option>
+                        <option>2</option>
+                        <option>1</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="brief" class="col-sm-2 control-label">简介</label>
+                <div class="col-sm-10">
+                    <textarea id="review" name="brief" rows="5" required="required" ng-model="vm.formData.brief" class="form-control"></textarea>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="brief" class="col-sm-2 control-label">上传图片</label>
+                <div class="col-sm-10">
+                    <a class="btn btn-info" id="upload" >点击上传</a>
+                    <br />
+                    <img src="" id="img" alt="" />
+                    <input type="hidden" id="imgvalue" name="img" value="" />
+                </div>
+            </div>
+
+        </div>
+        <div class="modal-footer">
+            <button ng-click="vm.modal.cancel()" type="button" class="btn btn-default">取消</button>
+            <button type="submit" class="btn btn-primary">确定</button>
+        </div>
+    </form>
+</div>

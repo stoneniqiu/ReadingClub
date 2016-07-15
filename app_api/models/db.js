@@ -1,8 +1,8 @@
 
 var mongoose = require('mongoose');
 
-var dbURI = 'mongodb://localhost/RClub';
-//var dbURI = 'mongodb://reader:loveReading@ds021343.mlab.com:21343/readingdb';
+//var dbURI = 'mongodb://localhost/RClub';
+var dbURI = 'mongodb://reader:loveReading@ds021343.mlab.com:21343/readingdb';
 mongoose.connect(dbURI);
 
 //var dbURIlog = 'mongodb://localhost/RClublog';
@@ -13,8 +13,6 @@ mongoose.connect(dbURI);
 //logDB.close(function () {
 //    console.log('Mongoose log disconnected');
 //});
-
-
 // 连接事件
 mongoose.connection.on('connected', function () {
     console.log('Mongoose connected to ' + dbURI);
