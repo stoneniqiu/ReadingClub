@@ -1,6 +1,30 @@
 var mongoose = require('mongoose');
 require('../models/db.js');
 var BookModel = mongoose.model('Book');
+var User = mongoose.model('User');
+var getAuthor = function (req, res, callback) {
+    if (req.payload && req.payload.email) {
+        User.findOne({ email: req.payload.email })
+            .exec(function (err, user) {
+            if (!user) {
+                sendJSONresponse(res, 404, { message: "User not found" });
+                return;
+            }
+            else if (err) {
+                console.log(err);
+                sendJSONresponse(res, 404, err);
+                return;
+            }
+            callback(req, res,user);
+        });
+    } else {
+        sendJSONresponse(res, 404, {
+            message : "User not found"
+        });
+        return;
+    }
+
+};
 
 var sendJSONresponse = function (res, status, content) {
     res.status(status);
@@ -20,23 +44,27 @@ module.exports.books = function (req, res) {
 };
 
 module.exports.bookCreate = function (req, res) {
-    console.log("imgurl:", req.body.img);
-    BookModel.create({
-        title: req.body.title,
-        info: req.body.info,
-        img: req.body.img,
-        tags: req.body.tags,
-        brief: req.body.brief,
-        ISBN: req.body.ISBN,
-        rating: req.body.rating,
-    }, function (err, book) {
-        if (err) {
-            console.log(err);
-            sendJSONresponse(res, 400, err);
-        } else {
-            console.log("新增书籍:", book);
-            sendJSONresponse(res, 201, book);
-        }
+    getAuthor(req, res, function(req, res,user) {
+        console.log("imgurl:", req.body.img);
+        BookModel.create({
+            title: req.body.title,
+            info: req.body.info,
+            img: req.body.img,
+            tags: req.body.tags,
+            brief: req.body.brief,
+            ISBN: req.body.ISBN,
+            rating: req.body.rating,
+            username: user.name,
+            userId:user._id
+        }, function (err, book) {
+            if (err) {
+                console.log(err);
+                sendJSONresponse(res, 400, err);
+            } else {
+                console.log("新增书籍:", book);
+                sendJSONresponse(res, 201, book);
+            }
+        });
     });
 };
 
@@ -102,19 +130,19 @@ module.exports.bookUpdateOne = function (req, res) {
 
 };
 
-module.exports.bookDeleteOne = function(req, res) {
+module.exports.bookDeleteOne = function (req, res) {
     var bookid = req.params.bookid;
     if (bookid) {
         BookModel.findByIdAndRemove(bookid)
-            .exec(function(err) {
-                if (err) {
-                    console.log(err);
-                    sendJSONresponse(res, 404, err);
-                    return;
-                }
-                console.log("book id :" + bookid + "deleted");
-                sendJSONresponse(res, 204, null);
-            });
+            .exec(function (err) {
+            if (err) {
+                console.log(err);
+                sendJSONresponse(res, 404, err);
+                return;
+            }
+            console.log("book id :" + bookid + "deleted");
+            sendJSONresponse(res, 204, null);
+        });
     } else {
         sendJSONresponse(res, 404, { message: "No bookid" });
     }

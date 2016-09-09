@@ -1,5 +1,4 @@
-﻿(function () {
-    
+﻿(function () {    
     angular
     .module('readApp')
     .controller('bookModalCtrl', bookModalCtrl);

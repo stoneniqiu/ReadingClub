@@ -9,14 +9,18 @@ function topicData ($http) {
     return $http.get('/api/topics');
 };
 
-booksData.$inject = ['$http'];
-function booksData($http) {
+booksData.$inject = ['$http','authentication'];
+function booksData($http,authentication) {
     var getBooks = $http.get('/api/books');
     var getbookById = function(bookid) {
         return $http.get('/api/book/' + bookid);
     };
     var addBook = function(data) {
-        return $http.post("/api/book", data);
+        return $http.post("/api/book", data, {
+            headers: {
+                Authorization: 'Bearer ' + authentication.getToken()
+            }
+        });
     };
     var removeBookById = function(bookid) {
         return $http.delete('/api/book/' + bookid);

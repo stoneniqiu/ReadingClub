@@ -2,8 +2,8 @@
     angular
 .module('readApp')
 .controller('booksCtrl', booksCtrl);
-    booksCtrl.$inject = ['booksData', 'userData', '$modal'];
-    function booksCtrl(booksData, user, $modal) {
+    booksCtrl.$inject = ['booksData','$modal', '$location','authentication'];
+    function booksCtrl(booksData,$modal, $location, authentication) {
         var vm = this;
         vm.message = "loading...";
         booksData.getBooks.success(function (data) {
@@ -13,8 +13,10 @@
             console.log(e);
             vm.message = "Sorry, something's gone wrong ";
         });
-        vm.user = user;
-        
+        vm.user = authentication.currentUser();
+        vm.isLoggedIn = authentication.isLoggedIn();
+        vm.currentPath = $location.path();
+
         vm.popupForm = function () {
             var modalInstance = $modal.open({
                 templateUrl: '/bookModal/bookModal.html',

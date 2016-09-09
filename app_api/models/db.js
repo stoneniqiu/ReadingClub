@@ -1,8 +1,8 @@
 
 var mongoose = require('mongoose');
 
-//var dbURI = 'mongodb://localhost/RClub';
-var dbURI = 'mongodb://reader:loveReading@ds021343.mlab.com:21343/readingdb';
+var dbURI = 'mongodb://localhost/RClub';
+//var dbURI = 'mongodb://reader:loveReading@ds021343.mlab.com:21343/readingdb';
 mongoose.connect(dbURI);
 
 //var dbURIlog = 'mongodb://localhost/RClublog';
@@ -52,7 +52,5 @@ process.on('SIGTERM', function () {
         process.exit(0);
     });
 });
-
-
 
 require('./books.js');

@@ -1,0 +1,25 @@
+﻿<navigation></navigation>
+<div id="bodycontent" class="container">
+    <div class="row">
+        <div  class="page-header">
+            <h1>登录</h1>
+        </div>
+        <div class="col-md-6 col-sm-12 page">
+            <p class="lead">没有账号？去<a href="/#register?page={{vm.returnPage}}">注册</a></p>
+            <form ng-submit="vm.onSubmit()">
+                <div role="alert" ng-show="vm.formError" class="alert alert-danger">{{vm.formError}}</div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" class="form-control" ng-model="vm.credentials.email" placeholder="邮箱" value="" />
+                </div>
+                <div class="form-group">
+                    <label for="password">密码</label>
+                    <input type="password" class="form-control" id="password" placeholder="密码" ng-model="vm.credentials.password" value="" />
+                </div>
+                <button type="submit" class="btn btn-default" >登录</button>
+            </form>
+        </div>
+    </div>
+</div>
+<footer-nav></footer-nav>
+    

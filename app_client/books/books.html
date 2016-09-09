@@ -20,8 +20,9 @@
         </div>
         <div class="col-md-3">
             <div class="userinfo">
-                <p>{{vm.user.userName}}</p>
-                <a ng-click="vm.popupForm()" class="btn btn-info">新增推荐</a>
+                <p>{{vm.user.name}}</p>
+                <a ng-show="vm.isLoggedIn"  ng-click="vm.popupForm()" class="btn btn-info">新增推荐</a>
+                <a ng-hide="vm.isLoggedIn" href="/#/login?page={{ vm.currentPath }}" class="btn btn-default  ">登录后推荐书籍</a>
             </div>
         </div>
     </div>

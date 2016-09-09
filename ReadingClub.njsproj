@@ -31,6 +31,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="app.js" />
+    <Compile Include="app_api\config\passport.js" />
+    <Compile Include="app_api\controllers\authentication.js" />
     <Compile Include="app_api\controllers\book.js" />
     <Compile Include="app_api\controllers\topic.js" />
     <Compile Include="app_api\models\books.js" />
@@ -38,13 +40,17 @@
     <Compile Include="app_api\routes\index.js" />
     <Compile Include="app_client\about\about.controller.js" />
     <Compile Include="app_client\app.js" />
+    <Compile Include="app_client\auth\login\login.controller.js" />
+    <Compile Include="app_client\auth\register\register.controller.js" />
     <Compile Include="app_client\bookDetail\bookDetail.controller.js" />
     <Compile Include="app_client\bookModal\bookModal.controller.js" />
     <Compile Include="app_client\books\books.controller.js" />
-    <Compile Include="app_client\common\directive\footer\footer.js" />
-    <Compile Include="app_client\common\directive\navigation\navigation.js" />
+    <Compile Include="app_client\common\directive\footer\footer.directive.js" />
+    <Compile Include="app_client\common\directive\navigation\navigation.controller.js" />
+    <Compile Include="app_client\common\directive\navigation\navigation.directive.js" />
     <Compile Include="app_client\common\directive\ratingStars\ratingStars.directive.js" />
     <Compile Include="app_client\common\filters\formatDate.filter.js" />
+    <Compile Include="app_client\common\services\authentication.service.js" />
     <Compile Include="app_client\common\services\ReadData.service.js" />
     <Compile Include="app_client\home\home.controller.js" />
     <Compile Include="app_client\lib\angular-sanitize.min.js" />
@@ -120,6 +126,8 @@
     <Compile Include="public\plupload-2.1.8\js\plupload.dev.js" />
     <Compile Include="public\plupload-2.1.8\js\plupload.full.min.js" />
     <Compile Include="public\plupload-2.1.8\js\plupload.min.js" />
+    <Content Include="app_client\auth\login\login.view.html" />
+    <Content Include="app_client\auth\register\register.view.html" />
     <Content Include="app_client\bookDetail\bookDetail.html" />
     <Content Include="app_client\bookModal\bookModal.html" />
     <Content Include="app_client\books\books.html" />
@@ -136,6 +144,8 @@
     <Content Include="app_server\views\about.jade" />
     <Content Include="app_server\views\info.jade" />
     <Content Include="app_server\views\_includes\rating.jade" />
+    <Content Include=".env" />
+    <Content Include=".gitignore" />
     <Content Include="nodemon.json" />
     <Content Include="package.json" />
     <Content Include="app_client\lib\angular-route.min.js.map" />
@@ -177,7 +187,10 @@
     <Folder Include="app_api\" />
     <Folder Include="app_api\controllers\" />
     <Folder Include="app_api\models\" />
+    <Folder Include="app_api\config\" />
     <Folder Include="app_api\routes\" />
+    <Folder Include="app_client\auth\login\" />
+    <Folder Include="app_client\auth\register\" />
     <Folder Include="app_client\common\directive\footer\" />
     <Folder Include="app_client\common\directive\navigation\" />
     <Folder Include="app_client\common\directive\ratingStars\" />
@@ -192,6 +205,7 @@
     <Folder Include="app_client\books\" />
     <Folder Include="app_client\bookDetail\" />
     <Folder Include="app_client\bookModal\" />
+    <Folder Include="app_client\auth\" />
     <Folder Include="app_server\controllers\" />
     <Folder Include="app_server\views\" />
     <Folder Include="app_server\routes\" />

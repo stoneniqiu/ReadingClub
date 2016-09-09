@@ -1,14 +1,22 @@
-﻿    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
-        <div class="container">
-            <div class="navbar-header"><a href="/" class="navbar-brand">ReadingClub</a></div>
-            <div class="collapse navbar-collapse">
-                <ul class="nav navbar-nav pull-right">
-                    <li><a href="/">首页</a></li>
-                    <li><a href="/books">读物</a></li>
-                    <li><a href="/about">关于</a></li>
-                    <li><a href="/Register">注册</a></li>
-                    <li><a href="/Login">登录</a></li>
-                </ul>
-            </div>
+﻿<nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
+    <div class="container">
+        <div class="navbar-header"><a href="/" class="navbar-brand">ReadingClub</a></div>
+        <div class="collapse navbar-collapse">
+
+            <ul class="nav navbar-nav pull-right">
+                <li><a href="/">首页</a></li>
+                <li><a href="/#books">读物</a></li>
+                <li><a href="/#about">关于</a></li>
+                <li ng-hide="navvm.isLoggedIn"><a href="/#register?page={{ navvm.currentPath }}">注册</a></li>
+                <li ng-hide="navvm.isLoggedIn"><a href="/#login?page={{ navvm.currentPath }}">登录</a></li>
+                <li ng-show="navvm.isLoggedIn" class="dropdown">
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown">{{navvm.currentUser.name }}</a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="" ng-click="navvm.logout()">退出</a></li>
+                    </ul>
+                </li>
+            </ul>
+
         </div>
-    </nav>
+    </div>
+</nav>
