@@ -8,7 +8,7 @@
 
 [Nodejs之MEAN栈开发（二）----视图与模型](http://www.cnblogs.com/stoneniqiu/p/5551019.html)
 
-[Nodejs之MEAN栈开发（三）---- 使用Mongoose创建模型及](API http://www.cnblogs.com/stoneniqiu/p/5556669.html)
+[Nodejs之MEAN栈开发（三）---- 使用Mongoose创建模型及API](http://www.cnblogs.com/stoneniqiu/p/5556669.html)
 
 [Nodejs之MEAN栈开发（四）---- form验证及图片上传](http://www.cnblogs.com/stoneniqiu/p/5613823.html)
 
