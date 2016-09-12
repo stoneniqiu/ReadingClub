@@ -23,7 +23,9 @@ function booksData($http,authentication) {
         });
     };
     var removeBookById = function(bookid) {
-        return $http.delete('/api/book/' + bookid);
+        return $http.delete('/api/book/' + bookid, {
+            Authorization: 'Bearer ' + authentication.getToken()
+        });
     };
     return {
         getBooks: getBooks,
